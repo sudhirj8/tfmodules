@@ -1,7 +1,6 @@
 
 output "username" {
-    //value = jsondecode(aws_secretsmanager_secret_version.RdsAminCred.secret_string)["username"]
-     value = jsondecode(aws_secretsmanager_secret_version.RdsAminCred.secret_string)["db_user"]
+       value = jsondecode(aws_secretsmanager_secret_version.RdsAminCred.secret_string)["db_user"]
 }
 
 output "password" {
