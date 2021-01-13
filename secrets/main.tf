@@ -10,7 +10,7 @@
 
 
 resource "aws_secretsmanager_secret" "RdsAminCred" {
-  name = "RdsAminCred"
+  name = "${var.appname}-${var.env}-RdsAminCred"
   tags = {
             Name = "RDS-Cred"
                 env = var.env
