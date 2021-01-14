@@ -11,4 +11,4 @@
 
 ## example usage
 
-    * export TF_VAR_dbcred='{db_user = "dbadmin2", db_password = "dbadmin#04avia"}'
+    * export TF_VAR_dbcred='{db_user = "dbadmin", db_password = "dbadminpassword"}'

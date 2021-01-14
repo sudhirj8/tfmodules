@@ -114,6 +114,38 @@ resource "aws_route_table_association" "private-subnet-2-association" {
      subnet_id= aws_subnet.private-subnet-2.id
  }
 
+// Network ACL
+
+
+resource "aws_network_acl" "main" {
+
+  vpc_id = aws_vpc.vpc.id
+  subnet_ids = [ aws_subnet.public-subnet-1.id, aws_subnet.public-subnet-2.id]
+  ingress {
+    protocol   = "tcp"
+    rule_no    = 100
+    action     = "allow"
+    cidr_block = "0.0.0.0/0"
+    from_port  = 22
+    to_port    = 22
+  }
+
+ egress {
+    protocol   = "tcp"
+    rule_no    = 100
+    action     = "allow"
+    cidr_block = "0.0.0.0/0"
+    from_port  = 22
+    to_port    = 22
+  }
+
+ 
+      tags = {
+        Name = "Network-Acl"
+                env = var.env
+                appname = var.appname
+    }  
+}
 
 // IGW
 
