@@ -2,9 +2,9 @@ variable vpc-id {
 
 }
 
-variable "env" {
+variable env {
 
 }
-variable "appname" {
+variable appname {
     
 }

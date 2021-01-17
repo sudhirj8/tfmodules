@@ -1,10 +1,4 @@
-# provider "aws" {
-#     region = var.region
-# }
 
-# terraform {
-#   backend "s3"  {}
-# }
 
 resource "aws_vpc" "vpc" {
     cidr_block = var.vpc_cidr
@@ -117,6 +111,9 @@ resource "aws_route_table_association" "private-subnet-2-association" {
 // Network ACL
 
 
+
+/*
+
 resource "aws_network_acl" "main" {
 
   vpc_id = aws_vpc.vpc.id
@@ -132,7 +129,7 @@ resource "aws_network_acl" "main" {
 
  egress {
     protocol   = "tcp"
-    rule_no    = 100
+    rule_no    = 300
     action     = "allow"
     cidr_block = "0.0.0.0/0"
     from_port  = 22
@@ -146,6 +143,8 @@ resource "aws_network_acl" "main" {
                 appname = var.appname
     }  
 }
+*/
+
 
 // IGW
 
